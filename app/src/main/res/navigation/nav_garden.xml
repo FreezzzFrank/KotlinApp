@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_garden"
+    app:startDestination="@id/homeViewPagerFragment">
+
+
+    <fragment
+        android:id="@+id/homeViewPagerFragment"
+        android:name="com.example.kotlinapp.pages.fragments.HomeViewPagerFragment"
+        android:label="HomeViewPagerFragment" >
+
+        <action
+            android:id="@+id/action_homeViewPagerFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.example.kotlinapp.pages.fragments.PlantDetailFragment"
+        android:label="PlantDetailFragment" >
+        <argument
+            android:name="plantId"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+
+
+</navigation>

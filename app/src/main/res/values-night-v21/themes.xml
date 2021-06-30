@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="Theme.Kotlinapp" parent="Base.Theme.Kotlinapp">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

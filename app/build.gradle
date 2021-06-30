@@ -43,7 +43,6 @@ android {
         freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
     }
     buildFeatures {
-        viewBinding true
         dataBinding true
     }
 }

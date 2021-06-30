@@ -9,7 +9,8 @@
     <fragment
         android:id="@+id/homeViewPagerFragment"
         android:name="com.example.kotlinapp.pages.fragments.HomeViewPagerFragment"
-        android:label="HomeViewPagerFragment" >
+        android:label="HomeViewPagerFragment"
+        tools:layout="@layout/fragment_home_view_pager">
 
         <action
             android:id="@+id/action_homeViewPagerFragment_to_plantDetailFragment"
@@ -18,11 +19,24 @@
     <fragment
         android:id="@+id/plantDetailFragment"
         android:name="com.example.kotlinapp.pages.fragments.PlantDetailFragment"
-        android:label="PlantDetailFragment" >
+        android:label="PlantDetailFragment"
+        tools:layout="@layout/fragment_plant_detail">
         <argument
             android:name="plantId"
             app:argType="string"
             android:defaultValue=""/>
+        <action
+            android:id="@+id/action_plantDetailFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.kotlinapp.pages.fragments.GalleryFragment"
+        android:label="GalleryFragment"
+        tools:layout="@layout/fragment_gallery">
+        <argument
+            android:name="plantName"
+            app:argType="string" />
     </fragment>
 
 

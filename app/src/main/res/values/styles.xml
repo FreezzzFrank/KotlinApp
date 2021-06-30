@@ -4,5 +4,6 @@
         <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 
+    <style name="ShapeAppearance.Kotlinapp.FAB" parent="ShapeAppearance.MaterialComponents.SmallComponent" />
 
 </resources>

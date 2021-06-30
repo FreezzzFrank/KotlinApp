@@ -27,7 +27,6 @@ class GardenActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_garden) as NavHostFragment
-//        val navController = findNavController(R.id.nav_host_fragment_content_garden)
         val navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -9,8 +9,13 @@
     <string name="menu_item_share_plant">Share</string>
     <string name="menu_filter_by_grow_zone" translation_description="The label for the menu item to filter the displayed plants by grow zone.">Filter by grow zone</string>
     <string name="gallery_content_description">Navigate to gallery screen</string>
+    <string name="plant_date_header" translation_description="Text that is shown on each plant on the 'My Garden' screen which says the word Planted to show date of planting below">Planted</string>
+    <string name="watered_date_header" translation_description="Text that is shown on each plant on the 'My Garden' screen which says the word Last Watered to show date of last watering below">Last Watered</string>
 
     <string name="watering_needs_prefix">Watering needs</string>
+    <string name="garden_empty">Your garden is empty</string>
+    <string name="add_plant">Add Plant</string>
+    <string name="gallery_title">Photos by Unsplash</string>
     <plurals name="watering_needs_suffix">
         <item quantity="one" translation_description="Suffix for the text describing how often a plant should be watered, singular. Used in combination with watering_needs_prefix: 'Watering needs: every day'.">every day</item>
         <item quantity="other" translation_description="Suffix for the text describing how often a plant should be watered, plural. Used in combination with watering_needs_prefix: 'Watering needs: every 8 days'.">every %d days</item>

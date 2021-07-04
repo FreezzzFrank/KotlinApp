@@ -9,7 +9,7 @@ import java.lang.IndexOutOfBoundsException
 const val MY_GARDEN_PAGE_INDEX = 0
 const val PLANT_LIST_PAGE_INDEX = 1
 
-class ToolLanePagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class KotlinAppPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     private val tabFragmentsCreators: Map<Int, () -> Fragment> = mapOf(
         MY_GARDEN_PAGE_INDEX to { GardenFragment() },

@@ -17,6 +17,7 @@ buildscript {
         gradleVersion = '4.2.1'
         gsonVersion = '2.8.6'
         hiltVersion = '2.33-beta'
+        pagingVersion = '3.1.0-alpha01'
         junitVersion = '4.13.2'
         kotlinVersion = '1.5.20'
         ktxVersion = '1.0.2'

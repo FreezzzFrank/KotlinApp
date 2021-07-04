@@ -5,12 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.example.kotlinapp.R
 import com.example.kotlinapp.databinding.FragmentHomeViewPagerBinding
 import com.example.kotlinapp.pages.adapters.MY_GARDEN_PAGE_INDEX
 import com.example.kotlinapp.pages.adapters.PLANT_LIST_PAGE_INDEX
-import com.example.kotlinapp.pages.adapters.ToolLanePagerAdapter
+import com.example.kotlinapp.pages.adapters.KotlinAppPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.IndexOutOfBoundsException
 
@@ -22,17 +23,18 @@ class HomeViewPagerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         val binding = FragmentHomeViewPagerBinding.inflate(inflater, container, false)
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
 
-        viewPager.adapter = ToolLanePagerAdapter(this)
+        viewPager.adapter = KotlinAppPagerAdapter(this)
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
-        }
+        }.attach()
+
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         return binding.root
     }
@@ -48,7 +50,7 @@ class HomeViewPagerFragment : Fragment() {
     private fun getTabTitle(position: Int): String? {
         return when (position) {
             MY_GARDEN_PAGE_INDEX -> "My garden"
-            PLANT_LIST_PAGE_INDEX -> "Pant list"
+            PLANT_LIST_PAGE_INDEX -> "Plant list"
             else -> null
         }
     }

@@ -27,12 +27,12 @@ class SeedDatabaseWorker(
 
                     val database = AppDataBase.getInstance(applicationContext)
                     database.plantDao().insertAll(plantList)
+
                     Result.success()
                 }
             }
         } catch (ex: Exception) {
             Log.e(TAG, "Error seeding database", ex)
-            ex.printStackTrace()
             Result.failure()
         }
     }

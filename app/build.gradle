@@ -65,6 +65,7 @@ dependencies {
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewPagerVersion"
     implementation "androidx.work:work-runtime-ktx:$rootProject.workVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLoggingVersion"

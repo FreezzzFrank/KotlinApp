@@ -10,7 +10,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="plant"
-            type="com.example.kotlinapp.data.entities.Plant"/>
+            type="com.example.kotlinapp.data.local.entities.Plant"/>
     </data>
 
     <com.example.kotlinapp.views.MaskedCardView

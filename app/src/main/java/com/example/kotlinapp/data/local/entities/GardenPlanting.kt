@@ -1,4 +1,4 @@
-package com.example.kotlinapp.data.entities
+package com.example.kotlinapp.data.local.entities
 
 import androidx.room.*
 import java.util.*

@@ -1,6 +1,6 @@
 package com.example.kotlinapp.viewmodel
 
-import com.example.kotlinapp.data.entities.PlantAndGardenPlantings
+import com.example.kotlinapp.data.local.entities.PlantAndGardenPlantings
 import java.text.SimpleDateFormat
 import java.util.*
 

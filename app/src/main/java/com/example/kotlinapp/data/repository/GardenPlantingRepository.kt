@@ -1,7 +1,7 @@
 package com.example.kotlinapp.data.repository
 
-import com.example.kotlinapp.data.dao.GardenPlantingDao
-import com.example.kotlinapp.data.entities.GardenPlanting
+import com.example.kotlinapp.data.local.dao.GardenPlantingDao
+import com.example.kotlinapp.data.local.entities.GardenPlanting
 import javax.inject.Inject
 
 class GardenPlantingRepository @Inject constructor(private val gardenPlantingDao: GardenPlantingDao) {

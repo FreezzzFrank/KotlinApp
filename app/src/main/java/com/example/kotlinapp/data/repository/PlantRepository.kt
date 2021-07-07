@@ -1,6 +1,6 @@
 package com.example.kotlinapp.data.repository
 
-import com.example.kotlinapp.data.dao.PlantDao
+import com.example.kotlinapp.data.local.dao.PlantDao
 import javax.inject.Inject
 import javax.inject.Singleton
 

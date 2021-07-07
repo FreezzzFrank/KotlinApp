@@ -1,4 +1,4 @@
-package com.example.kotlinapp.data.converters
+package com.example.kotlinapp.data.local.converters
 
 import java.util.Calendar
 import androidx.room.TypeConverter

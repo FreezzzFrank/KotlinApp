@@ -1,10 +1,10 @@
-package com.example.kotlinapp.data.dao
+package com.example.kotlinapp.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.kotlinapp.data.entities.UserInfo
+import com.example.kotlinapp.data.local.entities.UserInfo
 import kotlinx.coroutines.flow.Flow
 
 /**

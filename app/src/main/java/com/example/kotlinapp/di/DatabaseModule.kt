@@ -1,9 +1,9 @@
 package com.example.kotlinapp.di
 
 import android.content.Context
-import com.example.kotlinapp.data.AppDataBase
-import com.example.kotlinapp.data.dao.GardenPlantingDao
-import com.example.kotlinapp.data.dao.PlantDao
+import com.example.kotlinapp.data.local.AppDataBase
+import com.example.kotlinapp.data.local.dao.GardenPlantingDao
+import com.example.kotlinapp.data.local.dao.PlantDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

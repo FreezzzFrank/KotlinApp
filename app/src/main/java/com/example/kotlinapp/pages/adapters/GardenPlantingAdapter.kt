@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinapp.R
-import com.example.kotlinapp.data.entities.PlantAndGardenPlantings
+import com.example.kotlinapp.data.local.entities.PlantAndGardenPlantings
 import com.example.kotlinapp.databinding.ListItemGardenPlantingBinding
 import com.example.kotlinapp.pages.fragments.HomeViewPagerFragmentDirections
 import com.example.kotlinapp.viewmodel.PlantAndGardenPlantingsViewModel

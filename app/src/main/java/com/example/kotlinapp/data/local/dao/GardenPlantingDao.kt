@@ -1,8 +1,8 @@
-package com.example.kotlinapp.data.dao
+package com.example.kotlinapp.data.local.dao
 
 import androidx.room.*
-import com.example.kotlinapp.data.entities.GardenPlanting
-import com.example.kotlinapp.data.entities.PlantAndGardenPlantings
+import com.example.kotlinapp.data.local.entities.GardenPlanting
+import com.example.kotlinapp.data.local.entities.PlantAndGardenPlantings
 import kotlinx.coroutines.flow.Flow
 
 @Dao

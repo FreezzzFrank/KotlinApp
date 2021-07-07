@@ -14,7 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.kotlinapp.R
-import com.example.kotlinapp.data.entities.Plant
+import com.example.kotlinapp.data.local.entities.Plant
 import com.example.kotlinapp.databinding.FragmentPlantDetailBinding
 import com.example.kotlinapp.viewmodel.PlantDetailViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -1,4 +1,4 @@
-package com.example.kotlinapp.data.dao
+package com.example.kotlinapp.data.local.dao
 
 import androidx.room.Insert
 

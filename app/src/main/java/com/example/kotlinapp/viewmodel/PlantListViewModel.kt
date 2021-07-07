@@ -1,7 +1,7 @@
 package com.example.kotlinapp.viewmodel
 
 import androidx.lifecycle.*
-import com.example.kotlinapp.data.entities.Plant
+import com.example.kotlinapp.data.local.entities.Plant
 import com.example.kotlinapp.data.repository.PlantRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

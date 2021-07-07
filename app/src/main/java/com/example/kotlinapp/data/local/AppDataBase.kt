@@ -1,4 +1,4 @@
-package com.example.kotlinapp.data
+package com.example.kotlinapp.data.local
 
 import android.content.Context
 import androidx.room.Database
@@ -8,13 +8,13 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.example.kotlinapp.data.converters.Converters
-import com.example.kotlinapp.data.dao.GardenPlantingDao
-import com.example.kotlinapp.data.dao.PlantDao
-import com.example.kotlinapp.data.dao.UserInfoDao
-import com.example.kotlinapp.data.entities.GardenPlanting
-import com.example.kotlinapp.data.entities.Plant
-import com.example.kotlinapp.data.entities.UserInfo
+import com.example.kotlinapp.data.local.converters.Converters
+import com.example.kotlinapp.data.local.dao.GardenPlantingDao
+import com.example.kotlinapp.data.local.dao.PlantDao
+import com.example.kotlinapp.data.local.dao.UserInfoDao
+import com.example.kotlinapp.data.local.entities.GardenPlanting
+import com.example.kotlinapp.data.local.entities.Plant
+import com.example.kotlinapp.data.local.entities.UserInfo
 import com.example.kotlinapp.utilities.DATABASE_NAME
 import com.example.kotlinapp.woker.SeedDatabaseWorker
 

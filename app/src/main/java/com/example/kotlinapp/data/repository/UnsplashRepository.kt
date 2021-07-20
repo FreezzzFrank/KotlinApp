@@ -3,7 +3,7 @@ package com.example.kotlinapp.data.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.example.kotlinapp.api.UnsplashService
+import com.example.kotlinapp.data.remote.api.UnsplashService
 import com.example.kotlinapp.data.source.UnsplashPagingSource
 import com.example.kotlinapp.data.vo.UnsplashPhoto
 import kotlinx.coroutines.flow.Flow

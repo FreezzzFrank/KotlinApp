@@ -4,10 +4,10 @@ import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.example.kotlinapp.api.ApiEmptyResponse
-import com.example.kotlinapp.api.ApiErrorResponse
-import com.example.kotlinapp.api.ApiResponse
-import com.example.kotlinapp.api.ApiSuccessResponse
+import com.example.kotlinapp.data.remote.api.ApiEmptyResponse
+import com.example.kotlinapp.data.remote.api.ApiErrorResponse
+import com.example.kotlinapp.data.remote.api.ApiResponse
+import com.example.kotlinapp.data.remote.api.ApiSuccessResponse
 import com.example.kotlinapp.utilities.AppExecutors
 
 abstract class NetworkBoundResource<ResultType, RequestType>
@@ -19,7 +19,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
     init {
         result.value = Resource.loading(null)
         @Suppress("LeakingThis")
-        val dbSource = loadFormDb()
+        val dbSource = loadFromDb()
         result.addSource(dbSource) { data ->
             result.removeSource(dbSource)
             if (shouldFetch(data)) {
@@ -53,7 +53,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
                     appExecutors.diskIO().execute {
                         saveCallResult(processResponse(response))
                         appExecutors.mainThread().execute {
-                            result.addSource(loadFormDb()) { newData ->
+                            result.addSource(loadFromDb()) { newData ->
                                 setValue(Resource.success(newData))
                             }
                         }
@@ -61,7 +61,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
                 }
                 is ApiEmptyResponse -> {
                     appExecutors.mainThread().execute {
-                        result.addSource(loadFormDb()) { newData ->
+                        result.addSource(loadFromDb()) { newData ->
                             setValue(Resource.success(newData))
                         }
                     }
@@ -90,7 +90,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
     protected abstract fun shouldFetch(data: ResultType?): Boolean
 
     @MainThread
-    protected abstract fun loadFormDb(): LiveData<ResultType>
+    protected abstract fun loadFromDb(): LiveData<ResultType>
 
     @MainThread
     protected abstract fun createCall(): LiveData<ApiResponse<RequestType>>

@@ -1,10 +1,12 @@
 package com.example.kotlinapp.di
 
-import com.example.kotlinapp.api.UnsplashService
+import com.example.kotlinapp.data.remote.api.UnsplashService
+import com.example.kotlinapp.githubbrowser.api.GithubService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -16,4 +18,11 @@ class NetworkModule {
     fun provideUnsplashService(): UnsplashService {
         return UnsplashService.create()
     }
+
+    @Singleton
+    @Provides
+    fun provideGithubService(okHttpClient: OkHttpClient): GithubService {
+        return GithubService.create(okHttpClient)
+    }
+
 }

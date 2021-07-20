@@ -1,4 +1,4 @@
-package com.example.kotlinapp.api
+package com.example.kotlinapp.data.remote.api
 
 import com.example.kotlinapp.BuildConfig
 import com.example.kotlinapp.data.vo.UnsplashSearchResponse

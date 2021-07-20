@@ -7,7 +7,7 @@ import java.lang.NumberFormatException
 
 /**
  * ---------------------------------------------------------
- * <h></h>
+ * <h>Room common type converters</h>
  * <p></p>
  * Created by Frank on 6/15/21.
  * <a href="mailto:frankyao10110@gmail.com">Contact me</a>
@@ -29,11 +29,11 @@ object Converters {
     @JvmStatic
     fun stringToIntList(data: String?): List<Int>? {
         return data?.let {
-            it.split(",").map {
+            it.split(",").map { sp ->
                 try {
-                    it.toInt()
+                    sp.toInt()
                 } catch (ex: NumberFormatException) {
-                    Timber.e(ex, "Cannot convert $it to number")
+                    Timber.e(ex, "Cannot convert $sp to number")
                     null
                 }
             }
@@ -43,6 +43,7 @@ object Converters {
     @TypeConverter
     @JvmStatic
     fun intListToString(ints: List<Int>?): String? {
-        return ints?.joinToString { "," }
+        Timber.d(ints?.joinToString(","))
+        return ints?.joinToString(",")
     }
 }

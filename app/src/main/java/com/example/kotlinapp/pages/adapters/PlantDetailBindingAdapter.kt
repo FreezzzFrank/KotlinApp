@@ -1,22 +1,11 @@
 package com.example.kotlinapp.pages.adapters
 
 import android.text.method.LinkMovementMethod
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
-import coil.load
 import com.example.kotlinapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-@BindingAdapter("imageFromUrl")
-fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
-    if (!imageUrl.isNullOrEmpty()) {
-       view.load(imageUrl) {
-            crossfade(true)
-       }
-    }
-}
 
 @BindingAdapter("isFabGone")
 fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) {

@@ -1,7 +1,5 @@
 package com.example.kotlinapp.data.remote
 
-import com.example.kotlinapp.data.remote.enums.Status
-
 data class Resource<out T>(
     val status: Status,
     val data: T?,

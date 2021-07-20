@@ -1,11 +1,13 @@
 package com.example.kotlinapp.utilities
 
 import android.content.Context
+import android.os.Build
 import android.text.Html
 import android.text.Spanned
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 
 fun Context.dismissKeyboard(view : View?) {
@@ -17,6 +19,7 @@ fun Context.dismissKeyboard(view : View?) {
 
 }
 
+@RequiresApi(Build.VERSION_CODES.N)
 fun Context.fromHtmlWithParams(@StringRes stringRes: Int, parameter : String? = null) : Spanned {
 
     val stringText = if (parameter.isNullOrEmpty()) {

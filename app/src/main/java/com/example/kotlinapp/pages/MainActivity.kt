@@ -10,6 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import com.example.kotlinapp.R
 import com.example.kotlinapp.databinding.ActivityMainBinding
+import com.example.kotlinapp.githubbrowser.pages.GithubBrowserActivity
 import com.example.kotlinapp.pages.activities.GardenActivity
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +22,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btn.setOnClickListener {
+        binding.btn1.setOnClickListener {
             startActivity(Intent(this, GardenActivity::class.java))
+        }
+        binding.btn2.setOnClickListener {
+            startActivity(Intent(this, GithubBrowserActivity::class.java))
         }
     }
 

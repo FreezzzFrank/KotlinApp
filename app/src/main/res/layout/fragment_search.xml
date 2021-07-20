@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.kotlinapp.data.remote.Status"/>
+        <import type="java.util.List"/>
+        <import type="androidx.lifecycle.LiveData"/>
+        <import type="com.example.kotlinapp.data.remote.Resource"/>
+        <import type="com.example.kotlinapp.githubbrowser.repository.db.entities.Repo"/>
+
+        <variable
+            name="loadingMore"
+            type="boolean" />
+        <variable
+            name="query"
+            type="LiveData&lt;String>" />
+        <variable
+            name="results"
+            type="LiveData&lt;Resource&lt;List&lt;Repo>>>" />
+        <variable
+            name="callback"
+            type="com.example.kotlinapp.data.common.RetryCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/github_search"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/repo_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/search_input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/progress"
+            tools:listitem="@layout/list_item_repo"/>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:isVisible="@{loadingMore}"
+            style="@style/Widget.Kotlinapp.CircularProgressIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repo_list"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/no_result_text"
+            android:text="@{@string/empty_search_result(query)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            isVisible="@{results.status == Status.SUCCESS &amp;&amp; results.data.size() == 0}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <include
+            layout="@layout/loading_status"
+            app:resource="@{(Resource) results}"
+            app:callback="@{() -> callback.retry()}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

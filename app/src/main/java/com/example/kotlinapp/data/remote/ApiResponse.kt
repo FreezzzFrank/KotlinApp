@@ -1,4 +1,4 @@
-package com.example.kotlinapp.api
+package com.example.kotlinapp.data.remote.api
 
 import retrofit2.Response
 import timber.log.Timber
@@ -44,6 +44,7 @@ data class ApiSuccessResponse<T>(
     val body: T,
     val links: Map<String, String>
 ) : ApiResponse<T>() {
+
     constructor(body: T, linkHeader: String?) : this(
         body = body,
         links = linkHeader?.extractLinks() ?: emptyMap()

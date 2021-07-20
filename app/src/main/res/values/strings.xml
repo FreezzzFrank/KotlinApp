@@ -16,6 +16,8 @@
     <string name="garden_empty">Your garden is empty</string>
     <string name="add_plant">Add Plant</string>
     <string name="gallery_title">Photos by Unsplash</string>
+    <string name="github_search">Search or jump to…</string>
+    <string name="retry">Retry</string>
     <plurals name="watering_needs_suffix">
         <item quantity="one" translation_description="Suffix for the text describing how often a plant should be watered, singular. Used in combination with watering_needs_prefix: 'Watering needs: every day'.">every day</item>
         <item quantity="other" translation_description="Suffix for the text describing how often a plant should be watered, plural. Used in combination with watering_needs_prefix: 'Watering needs: every 8 days'.">every %d days</item>
@@ -26,4 +28,11 @@
         <item quantity="other" translation_description="Text indicating when the the plant should next be watered, plural. Used in conjunction with last watered date. 'May 24, 2018 - water in 8 days.'.">water in %d days.</item>
     </plurals>
 
+    <string name="repo_full_name"><b>%s</b><b>%s</b></string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="empty_search_result">no result for <b>%s</b></string>
+    <string name="sunflower">SunFlower</string>
+    <string name="github_browser">GithubBrowser</string>
+    <string name="repo_contributor_content_description">Github Repo Contributor Avatar</string>
+    <string name="user_avatar">Github User Avatar</string>
 </resources>

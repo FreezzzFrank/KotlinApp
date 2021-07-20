@@ -15,6 +15,12 @@ import com.example.kotlinapp.data.local.dao.UserInfoDao
 import com.example.kotlinapp.data.local.entities.GardenPlanting
 import com.example.kotlinapp.data.local.entities.Plant
 import com.example.kotlinapp.data.local.entities.UserInfo
+import com.example.kotlinapp.githubbrowser.repository.db.dao.RepoDao
+import com.example.kotlinapp.githubbrowser.repository.db.dao.UserDao
+import com.example.kotlinapp.githubbrowser.repository.db.entities.Contributor
+import com.example.kotlinapp.githubbrowser.repository.db.entities.Repo
+import com.example.kotlinapp.githubbrowser.repository.db.entities.RepoSearchResult
+import com.example.kotlinapp.githubbrowser.repository.db.entities.User
 import com.example.kotlinapp.utilities.DATABASE_NAME
 import com.example.kotlinapp.woker.SeedDatabaseWorker
 
@@ -26,16 +32,31 @@ import com.example.kotlinapp.woker.SeedDatabaseWorker
  * <a href="mailto:frankyao10110@gmail.com">Contact me</a>
  * ---------------------------------------------------------
  */
-@Database(entities = [UserInfo::class, Plant::class, GardenPlanting::class], version = 1, exportSchema = false)
+@Database(
+    entities = [
+        UserInfo::class,
+        Plant::class,
+        GardenPlanting::class,
+        Repo::class,
+        User::class,
+        Contributor::class,
+        RepoSearchResult::class,
+    ],
+    version = 2,
+    exportSchema = false
+)
 @TypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase() {
-    abstract fun userInfoDao() : UserInfoDao
-    abstract fun plantDao() : PlantDao
-    abstract fun gardenPlantingDao() : GardenPlantingDao
+    abstract fun userInfoDao(): UserInfoDao
+    abstract fun plantDao(): PlantDao
+    abstract fun gardenPlantingDao(): GardenPlantingDao
+    abstract fun githubRepoDao(): RepoDao
+    abstract fun githubUserDao(): UserDao
 
     companion object {
         // For Singleton instantiation
-        @Volatile private var instance: AppDataBase? = null
+        @Volatile
+        private var instance: AppDataBase? = null
 
         fun getInstance(context: Context): AppDataBase {
             return instance ?: synchronized(this) {

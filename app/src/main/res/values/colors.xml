@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red_primary">#FFDB0113</color>
+    <color name="red_secondary">#FFF89295</color>
 
     <color name="sunflower_black">#de000000</color>
     <color name="sunflower_gray_50">#fafafa</color>

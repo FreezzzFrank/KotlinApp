@@ -2,7 +2,7 @@ package com.example.kotlinapp.data.source
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.kotlinapp.api.UnsplashService
+import com.example.kotlinapp.data.remote.api.UnsplashService
 import com.example.kotlinapp.data.vo.UnsplashPhoto
 
 private const val UNSPLASH_STARTING_PAGE_INDEX = 1

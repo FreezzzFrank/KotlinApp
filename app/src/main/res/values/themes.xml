@@ -16,6 +16,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+<!--        <item name="circularProgressIndicatorStyle">@style/Widget.App.CircularProgressIndicator</item>-->
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Theme.Kotlinapp" parent="Base.Theme.Kotlinapp"/>

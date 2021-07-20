@@ -4,6 +4,12 @@
         <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 
-    <style name="ShapeAppearance.Kotlinapp.FAB" parent="ShapeAppearance.MaterialComponents.SmallComponent" />
+    <style name="Widget.Kotlinapp.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.CircularProgressIndicator</item>
+    </style>
+
+    <style name="ThemeOverlay.App.CircularProgressIndicator" parent="">
+        <item name="indicatorColor">@color/red_primary</item>
+    </style>
 
 </resources>

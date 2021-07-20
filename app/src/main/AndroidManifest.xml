@@ -23,6 +23,9 @@
         <activity
             android:name=".pages.activities.GardenActivity"
             android:label="GardenActivity"/>
+        <activity
+            android:name=".githubbrowser.pages.GithubBrowserActivity"
+            android:label="GithubBrowserActivity"/>
     </application>
 
 </manifest>

@@ -1,7 +1,6 @@
 package com.example.kotlinapp.woker
 
 import android.content.Context
-import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.example.kotlinapp.data.local.AppDataBase
@@ -12,6 +11,7 @@ import com.google.gson.stream.JsonReader
 
 import com.example.kotlinapp.utilities.PLANT_FILE_NAME
 import kotlinx.coroutines.coroutineScope
+import timber.log.Timber
 import java.lang.Exception
 
 class SeedDatabaseWorker(
@@ -32,12 +32,8 @@ class SeedDatabaseWorker(
                 }
             }
         } catch (ex: Exception) {
-            Log.e(TAG, "Error seeding database", ex)
+            Timber.e(ex, "Error seeding database")
             Result.failure()
         }
-    }
-
-    companion object {
-        private const val TAG = "SeedDatabaseWorker"
     }
 }

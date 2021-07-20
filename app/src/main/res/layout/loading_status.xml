@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.kotlinapp.data.remote.Resource"/>
+        <import type="com.example.kotlinapp.data.remote.Status"/>
+        <import type="com.example.kotlinapp.data.common.RetryCallback"/>
+        <variable
+            name="resource"
+            type="Resource" />
+
+        <variable
+            name="callback"
+            type="RetryCallback" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:isGone="@{resource.data != null}">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyle"
+            app:isGone="@{resource.status != Status.LOADING}"
+            android:indeterminate="true" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"
+            app:isGone="@{resource.status != Status.ERROR}"
+            android:onClick="@{() -> callback.retry()}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Something went wrong"
+            app:isGone="@{resource.status != Status.ERROR}"
+            style="@style/TextAppearance.MaterialComponents.Tooltip"
+            android:text="@{resource.message ?? @string/unknown_error}"/>
+
+    </LinearLayout>
+</layout>

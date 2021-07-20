@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.lifecycle.LiveData"/>
+        <import type="com.example.kotlinapp.data.remote.Resource"/>
+        <import type="com.example.kotlinapp.data.remote.Status"/>
+        <import type="com.example.kotlinapp.githubbrowser.repository.db.entities.User"/>
+
+        <variable
+            name="user"
+            type="LiveData&lt;Resource&lt;User>>" />
+
+        <variable
+            name="args"
+            type="com.example.kotlinapp.githubbrowser.pages.fragment.UserFragmentArgs" />
+
+        <variable
+            name="imageRequestListener"
+            type="coil.request.ImageRequest.Listener" />
+
+        <variable
+            name="retryCallback"
+            type="com.example.kotlinapp.data.common.RetryCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/photo_size"
+            android:layout_height="@dimen/photo_size"
+            app:imageFromUrl="@{user.data.avatarUrl ?? args.avatarUrl}"
+            app:imageRequestListener="@{imageRequestListener}"
+            app:transitionName="@{args.login}"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:cropToPadding="false"
+            android:adjustViewBounds="false"
+            android:contentDescription="@string/user_avatar"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Layne Yiu"
+            isVisible="@{user.data != null}"
+            android:text="@{user.data.name ?? user.data.login}"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_marginStart="@dimen/margin_small"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toTopOf="@+id/avatar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/repo_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:listitem="@layout/list_item_repo"
+            android:layout_margin="@dimen/margin_small"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <include
+            layout="@layout/loading_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:resource="@{(Resource) user}"
+            app:callback="@{() -> retryCallback.retry()}"
+            android:layout_margin="@dimen/margin_small"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

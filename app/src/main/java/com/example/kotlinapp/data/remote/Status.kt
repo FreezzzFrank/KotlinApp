@@ -1,4 +1,4 @@
-package com.example.kotlinapp.data.remote.enums
+package com.example.kotlinapp.data.remote
 
 enum class Status {
     SUCCESS,

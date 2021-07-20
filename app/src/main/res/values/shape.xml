@@ -18,6 +18,8 @@
         <item name="cornerSizeBottomLeft">@dimen/button_corner_radius</item>
     </style>
 
+    <style name="ShapeAppearance.Kotlinapp.FAB" parent="ShapeAppearance.MaterialComponents.SmallComponent" />
+
     <!-- Add plant button -->
     <dimen name="button_corner_radius">12dp</dimen>
 </resources>

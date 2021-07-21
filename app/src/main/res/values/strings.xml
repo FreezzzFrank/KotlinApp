@@ -35,4 +35,13 @@
     <string name="github_browser">GithubBrowser</string>
     <string name="repo_contributor_content_description">Github Repo Contributor Avatar</string>
     <string name="user_avatar">Github User Avatar</string>
+
+    <string name="paging">Paging</string>
+    <string name="add_cheese">Add Cheese</string>
+    <string name="add">Add</string>
+    <plurals name="cheese_name">
+        <item quantity="one">%s</item>
+        <item quantity="other">%s Cheeses</item>
+    </plurals>
+
 </resources>

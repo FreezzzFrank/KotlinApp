@@ -15,12 +15,14 @@ import com.example.kotlinapp.data.local.dao.UserInfoDao
 import com.example.kotlinapp.data.local.entities.GardenPlanting
 import com.example.kotlinapp.data.local.entities.Plant
 import com.example.kotlinapp.data.local.entities.UserInfo
-import com.example.kotlinapp.githubbrowser.repository.db.dao.RepoDao
-import com.example.kotlinapp.githubbrowser.repository.db.dao.UserDao
-import com.example.kotlinapp.githubbrowser.repository.db.entities.Contributor
-import com.example.kotlinapp.githubbrowser.repository.db.entities.Repo
-import com.example.kotlinapp.githubbrowser.repository.db.entities.RepoSearchResult
-import com.example.kotlinapp.githubbrowser.repository.db.entities.User
+import com.example.kotlinapp.sample.githubbrowser.repository.db.dao.RepoDao
+import com.example.kotlinapp.sample.githubbrowser.repository.db.dao.UserDao
+import com.example.kotlinapp.sample.githubbrowser.repository.db.entities.Contributor
+import com.example.kotlinapp.sample.githubbrowser.repository.db.entities.Repo
+import com.example.kotlinapp.sample.githubbrowser.repository.db.entities.RepoSearchResult
+import com.example.kotlinapp.sample.githubbrowser.repository.db.entities.User
+import com.example.kotlinapp.sample.paging.data.Cheese
+import com.example.kotlinapp.sample.paging.data.CheeseDao
 import com.example.kotlinapp.utilities.DATABASE_NAME
 import com.example.kotlinapp.woker.SeedDatabaseWorker
 
@@ -41,6 +43,7 @@ import com.example.kotlinapp.woker.SeedDatabaseWorker
         User::class,
         Contributor::class,
         RepoSearchResult::class,
+        Cheese::class,
     ],
     version = 2,
     exportSchema = false
@@ -52,6 +55,7 @@ abstract class AppDataBase : RoomDatabase() {
     abstract fun gardenPlantingDao(): GardenPlantingDao
     abstract fun githubRepoDao(): RepoDao
     abstract fun githubUserDao(): UserDao
+    abstract fun cheeseDao(): CheeseDao
 
     companion object {
         // For Singleton instantiation

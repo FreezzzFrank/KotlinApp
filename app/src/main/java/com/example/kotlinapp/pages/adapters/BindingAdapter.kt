@@ -1,7 +1,9 @@
 package com.example.kotlinapp.pages.adapters
 
+import android.graphics.Typeface
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import coil.load
 import coil.request.ImageRequest
@@ -47,3 +49,8 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, listener: ImageRequest.
         }
     }
 }
+
+//@BindingAdapter("textStyle")
+//fun bindTextStyle(view: TextView, style: Typeface) {
+//    view.typeface = style
+//}

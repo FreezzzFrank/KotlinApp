@@ -15,14 +15,18 @@ import com.example.kotlinapp.utilities.AppExecutors
  **/
 abstract class DataBoundListAdapter<T, V : ViewDataBinding>(
     appExecutors: AppExecutors,
-    diffCallback: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, DataBoundViewHolder<V>>(
+    diffCallback: DiffUtil.ItemCallback<T>,
+    private val viewHolder: DataBoundViewHolder<V>? = null,
+    ) : ListAdapter<T, DataBoundViewHolder<V>>(
     AsyncDifferConfig.Builder(diffCallback)
         .setBackgroundThreadExecutor(appExecutors.diskIO())
         .build()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBoundViewHolder<V> {
         val binding = createBinding(parent)
+        viewHolder?.let {
+            return it
+        }
         return DataBoundViewHolder(binding)
     }
 

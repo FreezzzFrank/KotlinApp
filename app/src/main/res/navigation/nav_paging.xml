@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_paging"
+    app:startDestination="@id/pagingHomeFragment">
+
+    <fragment
+        android:id="@+id/pagingHomeFragment"
+        android:name="com.example.kotlinapp.sample.paging.ui.fragment.PagingHomeFragment"
+        android:label="PagingHomeFragment" >
+        <action
+            android:id="@+id/action_pagingHomeFragment_to_cheeseFragment"
+            app:destination="@id/cheeseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cheeseFragment"
+        android:name="com.example.kotlinapp.sample.paging.ui.fragment.CheeseFragment"
+        android:label="CheeseFragment" />
+</navigation>

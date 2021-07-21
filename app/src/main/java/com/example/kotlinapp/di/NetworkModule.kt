@@ -1,7 +1,7 @@
 package com.example.kotlinapp.di
 
 import com.example.kotlinapp.data.remote.api.UnsplashService
-import com.example.kotlinapp.githubbrowser.api.GithubService
+import com.example.kotlinapp.sample.githubbrowser.api.GithubService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

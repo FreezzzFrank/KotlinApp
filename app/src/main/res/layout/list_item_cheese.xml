@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.kotlinapp.sample.paging.data.CheeseListItem.ListItem"/>
+        <import type="android.graphics.Typeface"/>
+        <variable
+            name="cheeseItem"
+            type="com.example.kotlinapp.sample.paging.data.CheeseListItem" />
+    </data>
+
+    <com.example.kotlinapp.views.MaskedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Cheese Name"
+            android:textStyle="@{cheeseItem instanceof ListItem
+                ? Typeface.NORMAL : Typeface.BOLD}"
+            android:layout_margin="@dimen/margin_small"
+            android:text="@{cheeseItem instanceof ListItem
+                ? @plurals/cheese_name(cheeseItem.name, cheeseItem.name)
+                : @plurals/cheese_name(cheeseItem.name)}"
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    </com.example.kotlinapp.views.MaskedCardView>
+</layout>

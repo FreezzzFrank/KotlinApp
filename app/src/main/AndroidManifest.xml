@@ -24,7 +24,7 @@
             android:name=".pages.activities.GardenActivity"
             android:label="GardenActivity"/>
         <activity
-            android:name=".githubbrowser.pages.GithubBrowserActivity"
+            android:name="com.example.kotlinapp.sample.githubbrowser.pages.GithubBrowserActivity"
             android:label="GithubBrowserActivity"/>
     </application>
 

@@ -4,8 +4,8 @@ import android.content.Context
 import com.example.kotlinapp.data.local.AppDataBase
 import com.example.kotlinapp.data.local.dao.GardenPlantingDao
 import com.example.kotlinapp.data.local.dao.PlantDao
-import com.example.kotlinapp.githubbrowser.repository.db.dao.RepoDao
-import com.example.kotlinapp.githubbrowser.repository.db.dao.UserDao
+import com.example.kotlinapp.sample.githubbrowser.repository.db.dao.RepoDao
+import com.example.kotlinapp.sample.githubbrowser.repository.db.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

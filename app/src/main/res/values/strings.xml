@@ -39,9 +39,8 @@
     <string name="paging">Paging</string>
     <string name="add_cheese">Add Cheese</string>
     <string name="add">Add</string>
-    <plurals name="cheese_name">
-        <item quantity="one">%s</item>
-        <item quantity="other">%s Cheeses</item>
-    </plurals>
+    <string name="cheese_name">%s Cheese</string>
+    <string name="cheese_paging">Cheese Paging</string>
+    <string name="reddit_paging">Reddit Paging</string>
 
 </resources>

@@ -20,12 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Cheese Name"
-            android:textStyle="@{cheeseItem instanceof ListItem
-                ? Typeface.NORMAL : Typeface.BOLD}"
             android:layout_margin="@dimen/margin_small"
-            android:text="@{cheeseItem instanceof ListItem
-                ? @plurals/cheese_name(cheeseItem.name, cheeseItem.name)
-                : @plurals/cheese_name(cheeseItem.name)}"
+            app:labelStyle="@{cheeseItem instanceof ListItem ? Typeface.NORMAL : Typeface.BOLD}"
+            android:text="@{cheeseItem instanceof ListItem ? cheeseItem.name : @string/cheese_name(cheeseItem.name)}"
             style="@style/TextAppearance.MaterialComponents.Body1"/>
 
     </com.example.kotlinapp.views.MaskedCardView>

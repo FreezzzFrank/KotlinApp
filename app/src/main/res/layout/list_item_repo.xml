@@ -9,7 +9,7 @@
             type="boolean" />
         <variable
             name="repo"
-            type="com.example.kotlinapp.githubbrowser.repository.db.entities.Repo" />
+            type="com.example.kotlinapp.sample.githubbrowser.repository.db.entities.Repo" />
     </data>
 
     <com.example.kotlinapp.views.MaskedCardView

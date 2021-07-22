@@ -6,6 +6,7 @@ import com.example.kotlinapp.data.local.dao.GardenPlantingDao
 import com.example.kotlinapp.data.local.dao.PlantDao
 import com.example.kotlinapp.sample.githubbrowser.repository.db.dao.RepoDao
 import com.example.kotlinapp.sample.githubbrowser.repository.db.dao.UserDao
+import com.example.kotlinapp.sample.paging.data.CheeseDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,5 +42,10 @@ class DatabaseModule {
     @Provides
     fun provideGithubUserDao(appDataBase: AppDataBase): UserDao {
         return appDataBase.githubUserDao()
+    }
+
+    @Provides
+    fun provideCheeseDao(appDataBase: AppDataBase): CheeseDao {
+        return appDataBase.cheeseDao()
     }
 }

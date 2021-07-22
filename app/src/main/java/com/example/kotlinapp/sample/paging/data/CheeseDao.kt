@@ -1,12 +1,10 @@
 package com.example.kotlinapp.sample.paging.data
 
 import androidx.paging.PagingSource
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.kotlinapp.data.local.dao.BaseDao
 
+@Dao
 interface CheeseDao : BaseDao<Cheese> {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

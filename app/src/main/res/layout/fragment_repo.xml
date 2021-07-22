@@ -6,7 +6,7 @@
     <data>
         <import type="androidx.lifecycle.LiveData"/>
         <import type="com.example.kotlinapp.data.remote.Resource"/>
-        <import type="com.example.kotlinapp.githubbrowser.repository.db.entities.Repo"/>
+        <import type="com.example.kotlinapp.sample.githubbrowser.repository.db.entities.Repo"/>
 
         <variable
             name="repo"

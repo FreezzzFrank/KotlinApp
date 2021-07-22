@@ -7,7 +7,7 @@
         <import type="androidx.lifecycle.LiveData"/>
         <import type="com.example.kotlinapp.data.remote.Resource"/>
         <import type="com.example.kotlinapp.data.remote.Status"/>
-        <import type="com.example.kotlinapp.githubbrowser.repository.db.entities.User"/>
+        <import type="com.example.kotlinapp.sample.githubbrowser.repository.db.entities.User"/>
 
         <variable
             name="user"
@@ -15,7 +15,7 @@
 
         <variable
             name="args"
-            type="com.example.kotlinapp.githubbrowser.pages.fragment.UserFragmentArgs" />
+            type="com.example.kotlinapp.sample.githubbrowser.pages.fragment.UserFragmentArgs" />
 
         <variable
             name="imageRequestListener"

@@ -9,7 +9,7 @@
         <import type="java.util.List"/>
         <import type="androidx.lifecycle.LiveData"/>
         <import type="com.example.kotlinapp.data.remote.Resource"/>
-        <import type="com.example.kotlinapp.githubbrowser.repository.db.entities.Repo"/>
+        <import type="com.example.kotlinapp.sample.githubbrowser.repository.db.entities.Repo"/>
 
         <variable
             name="loadingMore"
@@ -75,7 +75,7 @@
             android:text="@{@string/empty_search_result(query)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            isVisible="@{results.status == Status.SUCCESS &amp;&amp; results.data.size() == 0}"
+            app:isVisible="@{results.status == Status.SUCCESS &amp;&amp; results.data.size() == 0}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

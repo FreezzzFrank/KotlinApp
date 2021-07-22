@@ -50,7 +50,7 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?, listener: ImageRequest.
     }
 }
 
-//@BindingAdapter("textStyle")
-//fun bindTextStyle(view: TextView, style: Typeface) {
-//    view.typeface = style
-//}
+@BindingAdapter("labelStyle")
+fun bindTextStyle(view: TextView, style: Int) {
+    view.typeface = Typeface.defaultFromStyle(style)
+}

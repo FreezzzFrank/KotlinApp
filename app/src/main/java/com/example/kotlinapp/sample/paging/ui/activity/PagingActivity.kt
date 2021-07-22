@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.kotlinapp.R
 import com.example.kotlinapp.databinding.ActivityPagingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PagingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -7,7 +7,7 @@
 
         <variable
             name="contributor"
-            type="com.example.kotlinapp.githubbrowser.repository.db.entities.Contributor" />
+            type="com.example.kotlinapp.sample.githubbrowser.repository.db.entities.Contributor" />
     </data>
 
     <com.example.kotlinapp.views.MaskedCardView

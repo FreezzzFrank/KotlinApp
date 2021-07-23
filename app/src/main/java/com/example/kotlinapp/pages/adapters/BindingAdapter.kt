@@ -1,6 +1,7 @@
 package com.example.kotlinapp.pages.adapters
 
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -39,11 +40,12 @@ fun bindIsInVisible(view: View, isInVisible: Boolean) {
     }
 }
 
-@BindingAdapter(value = ["imageFromUrl", "imageRequestListener"], requireAll = false)
-fun bindImageFromUrl(view: ImageView, imageUrl: String?, listener: ImageRequest.Listener?) {
+@BindingAdapter(value = ["imageFromUrl", "placeholder", "imageRequestListener"], requireAll = false)
+fun bindImageFromUrl(view: ImageView, imageUrl: String?, resId: Drawable?, listener: ImageRequest.Listener?) {
     if (!imageUrl.isNullOrEmpty()) {
         view.load(imageUrl) {
             crossfade(true)
+            resId?.let { placeholder(it) }
             size(ViewSizeResolver(view))
             listener(listener)
         }

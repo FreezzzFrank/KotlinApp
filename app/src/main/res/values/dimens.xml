@@ -14,4 +14,5 @@
     <dimen name="plant_description_min_height">555dp</dimen>
     <dimen name="gallery_header_margin">72dp</dimen>
     <dimen name="photo_size">64dp</dimen>
+    <dimen name="large_picture_size">180dp</dimen>
 </resources>

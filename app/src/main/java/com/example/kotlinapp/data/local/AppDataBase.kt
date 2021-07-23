@@ -45,12 +45,11 @@ import com.example.kotlinapp.woker.SeedDatabaseWorker
         RepoSearchResult::class,
         Cheese::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase() {
-    abstract fun userInfoDao(): UserInfoDao
     abstract fun plantDao(): PlantDao
     abstract fun gardenPlantingDao(): GardenPlantingDao
     abstract fun githubRepoDao(): RepoDao

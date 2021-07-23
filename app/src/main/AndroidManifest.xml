@@ -28,6 +28,8 @@
             android:label="GithubBrowserActivity"/>
         <activity android:name=".sample.paging.ui.activity.PagingActivity"
             android:label="PagingLocalActivity"/>
+        <activity android:name=".sample.doggo.ui.DoggoActivity"
+            android:label="Doggo Paging"/>
     </application>
 
 </manifest>

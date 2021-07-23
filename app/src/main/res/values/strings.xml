@@ -42,5 +42,11 @@
     <string name="cheese_name">%s Cheese</string>
     <string name="cheese_paging">Cheese Paging</string>
     <string name="reddit_paging">Reddit Paging</string>
+    <string name="doggo_remote">Doggo Remote</string>
+    <string name="doggo_loader">Doggo Loader</string>
+    <string name="doggo_room">Doggo Room</string>
+    <string name="doggo_picture_describe">Doggo Picture</string>
+    <string name="label_title_remote">Paging with remote doggo api service as data source</string>
+    <string name="doggo_paging">Doggo Paging</string>
 
 </resources>

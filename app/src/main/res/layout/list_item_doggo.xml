@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="picture"
+            type="String" />
+    </data>
+
+    <com.example.kotlinapp.views.MaskedCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:layout_width="@dimen/large_picture_size"
+            android:layout_height="@dimen/large_picture_size"
+            android:scaleType="centerCrop"
+            app:imageFromUrl="@{picture}"
+            app:placeholder="@{@drawable/doggo_placeholder}"
+            android:contentDescription="@string/doggo_picture_describe"/>
+
+    </com.example.kotlinapp.views.MaskedCardView>
+</layout>

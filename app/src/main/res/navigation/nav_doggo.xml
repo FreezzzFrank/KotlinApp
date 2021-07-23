@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_doggo"
+    app:startDestination="@id/doggoFragment">
+
+    <fragment
+        android:id="@+id/doggoFragment"
+        android:name="com.example.kotlinapp.sample.doggo.ui.DoggoFragment"
+        android:label="DoggoFragment" >
+        <action
+            android:id="@+id/action_doggoFragment_to_doggoRoomFragment"
+            app:destination="@id/doggoRoomFragment" />
+        <action
+            android:id="@+id/action_doggoFragment_to_doggoLoaderFragment"
+            app:destination="@id/doggoLoaderFragment" />
+        <action
+            android:id="@+id/action_doggoFragment_to_doggoRemoteFragment"
+            app:destination="@id/doggoRemoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doggoRoomFragment"
+        android:name="com.example.kotlinapp.sample.doggo.ui.DoggoRoomFragment"
+        android:label="DoggoRoomFragment" />
+    <fragment
+        android:id="@+id/doggoLoaderFragment"
+        android:name="com.example.kotlinapp.sample.doggo.ui.DoggoLoaderFragment"
+        android:label="DoggoLoaderFragment" />
+    <fragment
+        android:id="@+id/doggoRemoteFragment"
+        android:name="com.example.kotlinapp.sample.doggo.ui.DoggoRemoteFragment"
+        android:label="DoggoRemoteFragment" />
+</navigation>
